@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Derivative Calculator</title>
+
+    <style>
+        header{
+            margin-top: 20px;
+            padding: auto;
+
+        }
+
+        .container{
+            margin-top: 20px;
+        }
+        .header-text{
+            color: springgreen;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            text-shadow: 1px 2px 2px black;
+            opacity: 0.8;
+        }
+        .btn-green{
+            background-color: springgreen;
+            color: white;
+            font-weight: bold;
+            opacity: 0.85;
+            box-shadow: 1px 2px 3px 2px rgba(0,0,0,0.5);
+        }
+        .btn-green:hover{
+            color: white;
+            opacity: 1;
+            box-shadow: 1px 2px 3px 2px rgba(0,0,0,0.5);
+            
+
+        }
+        .card-basic{
+            box-shadow: 1px 1px 3px 1px rgba(8, 255, 82, 0.3);
+        }
+        .footer-div{
+            background-color: rgb(68, 66, 66);
+            padding: 20px 22px;
+            height: auto;
+            margin-top: 20px;
+        }
+        .footer-text{
+            color: white;
+        }
+        .social:hover{
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+
+        }
+
+        .social{
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            -o-transform: scale(0.8);
+
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            -o-transition-duration: 0.5s;
+
+            color: white;
+        }
+        .fa.fa-github-square:hover{
+            color: black;
+
+        }
+        .fa.fa-google-plus-square:hover{
+            color: #d34836;
+        }
+        .fa.fa-twitter-square:hover{
+            color: #4099ff;
+        }
+        .fa.fa-facebook-square:hover{
+            color: #3b5998;
+        }
+        
+     
+    
+    </style>
+</head>
+<body>
+    <header>
+    <div class="container">
+    <h1 class="header-text">Calculator App <span class="fa fa-line-chart"></span></h1>
+    <hr>
+    </div></header>
+
+    <div class="container">
+        <div class="card card-basic">
+            <h5 class="card-header">Basic Mathematical Operations</h5>
+            <div class="card-body">
+              <h5 class="card-title">Features :- </h5>
+              <p class="card-text">Addition, Substraction, Division, Multiplication, Exponentiation</p>
+              <a href="/basic_calc" class="btn btn-green">Get Started <i class="fa fa-cubes"></i></a>
+            </div>
+          </div>
+    </div>
+
+    <div class="container">
+        <div class="card card-basic">
+            <h5 class="card-header">Symbolic Mathematical Operations</h5>
+            <div class="card-body">
+              <h5 class="card-title">Features :- </h5>
+              <p class="card-text">Factorization, Expansion, Quadratic Equations</p>
+              <a href="/symbolic" class="btn btn-green">Get Started <i class="fa fa-puzzle-piece"></i></a>
+            </div>
+          </div>
+    </div>
+
+    <div class="container">
+        <div class="card card-basic">
+            <h5 class="card-header">Calculus/ Numerical Analysis</h5>
+            <div class="card-body">
+              <h5 class="card-title">Features :- </h5>
+              <p class="card-text">Differentiation, Integration, Newton Raphson's Iteration, Differential Equations, Interpolation</p>
+              <a href="/derivative-calc" class="btn btn-green">Get Started <i class="fa fa-puzzle-piece"></i></a>
+            </div>
+          </div>
+    </div>
+    
+    <div class="container">
+        <div class="card card-basic">
+            <h5 class="card-header">Visualization</h5>
+            <div class="card-body">
+              <h5 class="card-title">Features :- </h5>
+              <p class="card-text">Plotting, Graphs, Statisical Analysis</p>
+              <a href="#" class="btn btn-green">Get Started <i class="fa fa-bar-chart"></i></a>
+            </div>
+          </div>
+    </div>
+
+    <footer>
+        <div class="footer-div">
+          <div class="text-center center-block">
+              <p class="footer-text"> &copy All Rights Reserved, Calculator App - 2020</p>
+            
+
+              <a href="#"><i class="fa fa-github-square fa-2x social"></i></a>
+              <a href="#"><i class="fa fa-google-plus-square fa-2x social"></i></a>
+              <a href="#"><i class="fa fa-twitter-square fa-2x social"></i></a>
+              <a href="#"><i class="fa fa-facebook-square fa-2x social"></i></a>
+          </div>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    $('btn-green').click(function(){
+        $('.btn-green').css({'background-color':'white'});
+    });
+</script>
+</body>
+</html>

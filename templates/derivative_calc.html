@@ -1,0 +1,105 @@
+<style>
+    .breadcrumb-basic{
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
+     padding: .75rem 1rem;
+     margin-bottom: 1rem;
+     list-style: none;
+     background-color: springgreen;
+     border-radius: .25rem;
+     box-shadow: 1px 2px 2px 3px rgba(61, 58, 58, 0.7);
+ }
+ .breadcrumb-basic li.breadcrumb-item a{ 
+     color: white;
+     text-decoration: none;
+ }
+ .btn.btn-green{
+    background-color: springgreen;
+    color: white;
+    box-shadow: 1px 2px 2px 3px rgba(61, 58, 58, 0.7);
+    opacity: 0.8;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.btn.btn-green:hover{
+    background-color: springgreen;
+    color: white;
+    box-shadow: 1px 2px 2px 3px rgba(61, 58, 58, 0.7);
+    opacity: 1;
+    font-weight: bold;
+}
+.fa.fa-home{
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.alert{
+     color: white;
+     background-color: springgreen;
+     padding: auto;
+ }
+ </style>
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="bread-head">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb-basic">
+          <li class="breadcrumb-item"><a href="#">Calculator App/ Derivative Calculator </a></li>
+         
+        </ol>
+      </nav>
+    </div>
+<form action="/derive" method ='POST'>
+    
+ 
+    
+    <div class="form-group">
+      <label for="seeAnotherFieldGroup">Select Operation i.e Differentiation, Integration e.t.c</label>
+      <select class="form-control" id="seeAnotherFieldGroup" name="operationcalculus">
+            <option value="diff">Differentiation</option>
+            <option value="int">Integration</option>
+      </select>
+    </div>
+    
+    <div class="form-group" id="IntegrationDiv">
+
+      <div class="row">
+        <div class="col-6">
+          <label for="lower-limit">Lower Limit :-</label>
+          <input type="text" class="form-control w-100" id="lower-limit" name="lower-limit">
+        </div>
+        <div class="col-6">
+          <label for="upper-limit">Upper Limit :-</label>
+          <input type="text" class="form-control w-100" id="upper-limit" name = "upper-limit">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" >
+
+      <div class="form-group">
+          <label for="func">Enter Function :-</label>
+          <input type="text" class="form-control" placeholder="Enter Function" name="func">
+        </div>
+
+  </div>
+    
+    
+    <button type="submit" class="btn btn-green">Evaluate <i class="fa fa-cube"></i></button>
+    <a href="/" class="btn btn-green">Home<i class="fa fa-home"></i></a>
+  </form>
+
+  <div class="alert">
+    {% if operationcalculus == "diff" %}
+    Result :- <b>{{ result }}</b>
+    {% elif operationcalculus == "int" %}
+     <p>Integral :- <b>{{ result_int }} + C</b></p>
+     <p>Result :- <b>{{ result_bound }}</b></p>
+     {% endif %}
+    </div>
+{% endblock %}
+

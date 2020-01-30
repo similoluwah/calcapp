@@ -1,0 +1,103 @@
+<style>
+    .breadcrumb-basic{
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
+     padding: .75rem 1rem;
+     margin-bottom: 1rem;
+     list-style: none;
+     background-color: springgreen;
+     border-radius: .25rem;
+     box-shadow: 1px 2px 2px 3px rgba(61, 58, 58, 0.7);
+ }
+ .breadcrumb-basic li.breadcrumb-item a{ 
+     color: white;
+     text-decoration: none;
+ }
+ .btn.btn-green{
+     background-color: springgreen;
+     color: white;
+     box-shadow: 1px 2px 2px 3px rgba(61, 58, 58, 0.7);
+     opacity: 0.8;
+     margin-left: 3px;
+     margin-right: 3px;
+ }
+ .btn.btn-green:hover{
+     background-color: springgreen;
+     color: white;
+     box-shadow: 1px 2px 2px 3px rgba(61, 58, 58, 0.7);
+     opacity: 1;
+     font-weight: bold;
+ }
+ .fa.fa-calculator{
+     margin-left: 5px;
+ }
+ .fa.fa-home{
+     margin-left: 5px;
+ }
+ button a{
+     text-decoration: none;
+     color: white;
+ }
+ button a:hover{
+     text-decoration: none;
+     color: white;
+ }
+ .alert{
+     color: white;
+     background-color: springgreen;
+     padding: auto;
+ }
+ </style>
+ {% extends "layout.html" %}
+ 
+ {% block body %}
+ 
+ <div class="bread-head">
+ <nav aria-label="breadcrumb">
+     <ol class="breadcrumb-basic">
+       <li class="breadcrumb-item"><a href="#">Calculator App/ Symbolic Math Operations</a></li>
+      
+     </ol>
+   </nav>
+ </div>
+ 
+ <form action="/send-symbolic" method="POST">
+     <div class="form-group">
+       <label for="Number one">Enter Function i.e f(x) :-</label>
+       <input type="text" class="form-control" name="symbolicfunc"  placeholder="Enter Function i.e f(x) ">
+       <small class="form-text text-muted"></small>
+     </div>
+    
+     <div class="form-group">
+         <label for='Operation'>Select Operation :-</label>
+         <select id="inputState" class="form-control" name="operationsymbolic">
+             <option selected >Choose Your Preferred Operation </option>
+             <option value="simplify">Simplify</option>
+             <option value="expand">Expand</option>
+             <option value="factorize">Factorize</option>
+             <option value="solve">Solve Quadratic Equation</option>
+           </select>
+     </div>
+     <button type="submit" class="btn btn-green" id="calc_btn">Solve<i class="fa fa-calculator"></i></button>
+     <a href="/" class="btn btn-green">Home<i class="fa fa-home"></i></a>
+   </form>
+ 
+   <div class="alert">
+       {% if operationsymbolic == "solve" %}
+    Result :- <b>The Roots are :- 
+        {% for i in result %}
+        i
+        {% endfor %}
+    </b>
+    {% else %}
+   Result :- <b>{{ result }}</b>
+
+   {% endif %}
+   </div>
+ 
+ 
+ {% endblock %}
+ 
+ 
